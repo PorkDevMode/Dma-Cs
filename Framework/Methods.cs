@@ -10,13 +10,16 @@ namespace Framework
     internal class Methods
     {
         #region Addresses
-        // Addresses
+        // Admin addresses
         public static ulong timeAddress;
         public static ulong waterEffect;
+
+        // Convar graphics addresses
         public static ulong fovAddress;
-        public static ulong footstepLight;
-        public static ulong footstepMedium;
-        public static ulong footstepHard;
+
+        // Localplayer addresses
+
+        // Baseplayer addresses
         public static ulong basePlayer;
         public static ulong basePlayerMovement;
         #endregion
@@ -43,10 +46,10 @@ namespace Framework
             // Static baseplayer
             ulong basePlayerBase = Memory.Read<ulong>(localPlayerStatic + Offsets.basePlayerBackingField);
             ulong basePlayerMovementAdd = Memory.Read<ulong>(basePlayerBase + Offsets.basePlayerMovement);
+
+            // Baseplayer address definitions
             basePlayer = basePlayerBase;
             basePlayerMovement = basePlayerMovementAdd;
-
-
         }
         #endregion
 

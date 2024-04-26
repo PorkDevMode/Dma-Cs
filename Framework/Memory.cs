@@ -12,18 +12,19 @@ namespace Framework
         {
             Console.WriteLine("Loading dma");
             Offsets.vmm = new Vmm("-printf", "-device", "fpga", "-v");
+
             Console.WriteLine("Finding process");
 
             while (true)
             {
                 if (Offsets.vmm.PidGetFromName(gameName, out Offsets.processPid))
                 {
-                    Console.WriteLine("Found Game!");
+                    Console.WriteLine("Found Game.");
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("Game could not be found! Please open it and try again.");
+                    Console.WriteLine("Game could not be found, Trying again.");
                     Thread.Sleep(5000);
                 }
             }

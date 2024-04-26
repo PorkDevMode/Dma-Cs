@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\DMA.csproj",
+      "projectUniqueName": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\Dma-Cs\\DMA.csproj",
       "projectName": "DMA",
-      "projectPath": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\DMA.csproj",
+      "projectPath": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\Dma-Cs\\DMA.csproj",
       "packagesPath": "C:\\Users\\Jojo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\obj\\",
+      "outputPath": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\Dma-Cs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jojo\\AppData\\Roaming\\NuGet\\NuGet.Config",

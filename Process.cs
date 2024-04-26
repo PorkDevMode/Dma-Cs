@@ -3,10 +3,10 @@
 
 class Process
 {
-
     static void Main(string[] args)
     {
         Memory.init("RustClient.exe", "GameAssembly.dll");
+
         Methods.initMethods();
         Methods.infiniteDay();
         Methods.changeFov(120f);

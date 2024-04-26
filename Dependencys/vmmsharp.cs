@@ -18,7 +18,7 @@ using System.Text.RegularExpressions;
  *  
  *  Version 5.9
  *  
- *  Modified by PorkCheatDev on discord
+ *  Modified by PorkCheatDev on unknowncheats
  */
 #pragma warning disable CS8603
 #pragma warning disable CS8601
