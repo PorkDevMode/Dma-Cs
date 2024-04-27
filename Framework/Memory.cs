@@ -86,6 +86,11 @@ namespace Framework
                 }
             }
         }
+        public static VmmScatter createScatter()
+        {
+            VmmScatter scatter = Offsets.vmm.Scatter_Initialize();
+            return scatter;
+        }
         #endregion
         #region Utility
         private static byte[] StructureToByteArray<T>(T structure) where T : struct

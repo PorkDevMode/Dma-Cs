@@ -8,8 +8,8 @@ class Process
         Memory.init("RustClient.exe", "GameAssembly.dll");
 
         Methods.initMethods();
-        Methods.infiniteDay();
+        Methods.changeTime(1f);
         Methods.changeFov(120f);
-        Methods.spiderMan();
+        Methods.infiniteJump();
     }
 }

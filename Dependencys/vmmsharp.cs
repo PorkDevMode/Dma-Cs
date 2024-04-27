@@ -901,9 +901,9 @@ namespace Framework
             return MEMs;
         }
 
-        public VmmScatter Scatter_Initialize(uint pid, uint flags)
+        public VmmScatter Scatter_Initialize()
         {
-            nint hS = VMMDLL_Scatter_Initialize(hVMM, pid, flags);
+            nint hS = VMMDLL_Scatter_Initialize(hVMM, Offsets.processPid, Vmm.FLAG_NOCACHE);
             if (hS.ToInt64() == 0) { return null; }
             return new VmmScatter(hS);
         }

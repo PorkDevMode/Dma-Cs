@@ -30,5 +30,20 @@ namespace Framework
         public static ulong localPlayerBase = 0x3AB6FD8; // LocalPlayer_TypeInfo
         public static ulong basePlayerBackingField = 0x0;
         public static ulong basePlayerMovement = 0x6C0;
+        public static ulong groundTime = 0xD4;
+        public static ulong jumpTime = 0xD8;
+        public static ulong landTime = 0xDC;
+        public static ulong groundAngle = 0xCC; // private float groundAngle;
+        public static ulong groundAngleNew = 0xD0; //private float groundAngleNew;
+        public static ulong maxAngle = 0x94; //public float maxAngleWalking;
+
+        // Todsky offsets
+        public static ulong todSkyBase = 0x3A8D358; // TOD_Sky_TypeInfo
+        public static ulong NightParameters = 0x60; // public TOD_NightParameters Night;
+        public static ulong DayParameters = 0x58; // 	public TOD_DayParameters Day;
+        public static ulong AmbientMultiplierDay = 0x50; // TOD_NightParameters -> public float AmbientMultiplier;
+        public static ulong AmbientMultiplierNight = 0x50; // TOD_NightParameters -> public float AmbientMultiplier;
+        public static ulong LightIntensityDay = 0x48; // TOD_NightParameters -> public float LightIntensity;
+        public static ulong LightIntensityNight = 0x48; // TOD_NightParameters -> public float LightIntensity;
     }
 }

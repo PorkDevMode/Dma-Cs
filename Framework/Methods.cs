@@ -22,6 +22,10 @@ namespace Framework
         // Baseplayer addresses
         public static ulong basePlayer;
         public static ulong basePlayerMovement;
+
+        // Todsky addresses
+        public static ulong todNight;
+        public static ulong todDay;
         #endregion
 
         #region Initialize Methods
@@ -29,17 +33,26 @@ namespace Framework
         public static void initMethods()
         {
             // Static admin
+            Print("[ADMIN] Initializing");
             ulong adminBase = Memory.Read<ulong>(Offsets.GameAssembly + Offsets.adminBase);
             ulong adminStatic = Memory.Read<ulong>(adminBase + Offsets.Static);
+
+            // Admin address definitions
             timeAddress = adminStatic + Offsets.adminTime;
             waterEffect = adminStatic + Offsets.adminWaterEffect;
+            Print("[ADMIN] Initialized");
 
             // Static convar graphics
+            Print("[GRAPHICS] Initializing");
             ulong graphicsBase = Memory.Read<ulong>(Offsets.GameAssembly + Offsets.graphicsBase);
             ulong graphicsStatic = Memory.Read<ulong>(graphicsBase + Offsets.Static);
+
+            // Convar graphics definitions.
             fovAddress = graphicsStatic + Offsets.graphicsFov;
+            Print("[GRAPHICS] Initialized");
 
             // Static localplayer base
+            Print("[LOCAL PLAYER] Initializing");
             ulong localPlayerBase = Memory.Read<ulong>(Offsets.GameAssembly + Offsets.localPlayerBase);
             ulong localPlayerStatic = Memory.Read<ulong>(localPlayerBase + Offsets.Static);
 
@@ -50,10 +63,29 @@ namespace Framework
             // Baseplayer address definitions
             basePlayer = basePlayerBase;
             basePlayerMovement = basePlayerMovementAdd;
+            Print("[LOCAL PLAYER] Initialized");
+
+            // Static Todsky definitions
+            Print("[TODSKY] Initializing");
+            ulong todSkyBase = Memory.Read<ulong>(Offsets.GameAssembly + Offsets.todSkyBase);
+            ulong todSkyStatic = Memory.Read<ulong>(todSkyBase + Offsets.Static);
+            todSkyStatic = Memory.Read<ulong>(todSkyStatic + 0x0);
+            ulong instanceValues = Memory.Read<ulong>(todSkyStatic + 0x10);
+            ulong instance = Memory.Read<ulong>(instanceValues + 0x20);
+
+            // TODSky address definitions
+            todNight = Memory.Read<ulong>(instance + Offsets.NightParameters);
+            todDay = Memory.Read<ulong>(instance + Offsets.DayParameters);
+            Print("[LOCAL PLAYER] Initialized");
         }
         #endregion
 
         #region Base Methods
+        // print method because im lazy
+        public static void Print(string message)
+        {
+            Console.WriteLine(message);
+        }
         // Changes convar graphics fov
         public static void changeFov(float fov)
         {
@@ -79,6 +111,8 @@ namespace Framework
                 Console.WriteLine("Successfully wrote time value");
             }
         }
+        #endregion
+        #region Methods
         // Permaday
         public static void infiniteDay()
         {
@@ -98,15 +132,36 @@ namespace Framework
         {
             while (true)
             {
-                Vmm vmm = Offsets.vmm;
+                VmmScatter scatter = Memory.createScatter();
 
-                VmmScatter scatter = vmm.Scatter_Initialize(Offsets.processPid, Vmm.FLAG_NOCACHE);
-
-                Memory.PrepareWrite(scatter, basePlayerMovement + 0xD0, 0f);
-                Memory.PrepareWrite(scatter, basePlayerMovement + 0x94, 100f);
-                Memory.PrepareWrite(scatter, basePlayerMovement + 0xCC, 0f);
+                Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.groundAngleNew, 0f);
+                Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.maxAngle, 100f);
+                Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.groundAngle, 0f);
                 scatter.Execute();
                 scatter.Close();
+                Thread.Sleep(1);
+            }
+        }
+        // Jump very high!
+        public static void infiniteJump()
+        {
+            while (true)
+            {
+                // WILL RESEARCH THIS MORE, DK HOW TO DO
+
+                // VmmScatter scatter = Memory.createScatter();
+                // 
+                // Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.landTime, 0f);
+                // Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.jumpTime, 0f);
+                // Memory.PrepareWrite(scatter, basePlayerMovement + Offsets.groundTime, 0f);
+                // scatter.Execute();
+                // scatter.Close();
+                // Thread.Sleep(100);
+                // float e = Memory.Read<float>(basePlayerMovement + Offsets.landTime);
+                // float d = Memory.Read<float>(basePlayerMovement + Offsets.jumpTime);
+                // float b = Memory.Read<float>(basePlayerMovement + Offsets.groundTime);
+                // Print($"Landtime: {e}\nJumptime: {d}\nGroundtime: {b}");
+                // Thread.Sleep(100);
             }
         }
         #endregion
