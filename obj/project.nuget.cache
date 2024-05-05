@@ -1,8 +1,24 @@
 {
   "version": 2,
-  "dgSpecHash": "Y2BHmdHDhmYVN7L2MGEd+aGB/n0aXeHBeJfSuiPI0DxDUGeh3g2VmRXmuQP4kh33Tge/UqhzptROzBnHjpK4kw==",
+  "dgSpecHash": "39Z2NervGsbiy9LrUK6qrk7DH8x3ALm2ieINerZAsyDO3YSqtQ77kXNlz/UCsxmX8uCkneTr9vGKcy6txeQU2g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jojo\\Documents\\Visual Studio Projects\\DMA\\DMA\\Dma-Cs\\DMA.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Jojo\\.nuget\\packages\\clickabletransparentoverlay\\10.0.0\\clickabletransparentoverlay.10.0.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\imgui.net\\1.90.5.1\\imgui.net.1.90.5.1.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\sharpgen.runtime\\2.1.2-beta\\sharpgen.runtime.2.1.2-beta.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\sharpgen.runtime.com\\2.1.2-beta\\sharpgen.runtime.com.2.1.2-beta.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\sixlabors.imagesharp\\3.1.4\\sixlabors.imagesharp.3.1.4.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\system.drawing.common\\8.0.4\\system.drawing.common.8.0.4.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.4.0\\system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\vortice.d3dcompiler\\3.5.0\\vortice.d3dcompiler.3.5.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\vortice.direct3d11\\3.5.0\\vortice.direct3d11.3.5.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\vortice.directx\\3.5.0\\vortice.directx.3.5.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\vortice.dxgi\\3.5.0\\vortice.dxgi.3.5.0.nupkg.sha512",
+    "C:\\Users\\Jojo\\.nuget\\packages\\vortice.mathematics\\1.7.8\\vortice.mathematics.1.7.8.nupkg.sha512"
+  ],
   "logs": []
 }

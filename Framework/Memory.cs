@@ -3,6 +3,7 @@ using System.Text;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Numerics;
 
 namespace Framework
 {
@@ -56,8 +57,8 @@ namespace Framework
                     }
                     else
                     {
-                        Console.WriteLine("Failed to read memory!");
-                        throw new InvalidOperationException($"Failed to read {typeof(T).Name} from memory.");
+                        Console.WriteLine($"Failed to read {typeof(T).Name} from memory.");
+                        return default(T);
                     }
                 }
             }
@@ -86,6 +87,16 @@ namespace Framework
                 }
             }
         }
+        //public static T ScatterRead<T>(VmmScatter scatter, ulong address)
+        //{
+        //    int size = Marshal.SizeOf(typeof(T));
+        //    byte[] buffer = new byte[size];
+        //
+        //    unsafe
+        //    {
+        //
+        //    }
+        //}
         public static VmmScatter createScatter()
         {
             VmmScatter scatter = Offsets.vmm.Scatter_Initialize();
